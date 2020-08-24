@@ -1,0 +1,17 @@
+# Ignore vscode config
+.vscode
+
+# Ignore vendor
+node_modules
+
+# Ignore yarn.lock (for now)
+yarn.lock
+
+# Ignore test coverage
+coverage
+
+# Ignore environment variables
+.env
+
+# Ignore build
+dist

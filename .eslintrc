@@ -1,0 +1,39 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["import", "react-hooks"],
+  "rules": {
+    "global-require": "off",
+    "import/extensions": "off",
+    "import/no-dynamic-require": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "warn",
+    "no-console": "off",
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "no-restricted-globals": "off",
+    "no-unused-vars": ["error", { "args": "none" }],
+    "prefer-destructuring": "warn",
+    "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-curly-newline": "warn",
+    "react/jsx-indent": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "warn",
+    "react/jsx-wrap-multilines": "off"
+  }
+}
