@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import I18n from 'i18n-js';
 
-import App from 'src/app/App';
+import App from 'src/app';
 import { generateLogs } from 'src/utils';
 
 const locale = 'en';

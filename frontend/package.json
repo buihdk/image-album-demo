@@ -18,7 +18,9 @@
     "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.2.2",
     "antd": "^4.6.1",
+    "axios": "^0.20.0",
     "i18n-js": "^3.7.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -57,6 +59,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-sonarjs": "^0.5.0",
     "gh-pages": "^3.0.0",
     "jest": "^24.9.0",
     "jest-config": "^26.2.2",

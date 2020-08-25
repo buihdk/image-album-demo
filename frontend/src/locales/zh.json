@@ -1,0 +1,17 @@
+{
+  "upload": {
+    "success": "文件已成功上传。",
+    "error": "无法上传文件。",
+    "text": "在此处拖放一些文件，或单击以选择文件。",
+    "hint": "支持单次或批量上传。",
+    "title": "上载"
+  },
+  "delete": {
+    "success": "文件已成功删除。",
+    "successMultiple": "文件已成功删除。",
+    "error": "删除文件失败。",
+    "errorMultiple": "删除文件失败。"
+  },
+  "missingAlbum": "请为该文件选择一个相册。",
+  "photos": "相片"
+}

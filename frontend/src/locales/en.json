@@ -1,4 +1,17 @@
 {
-  "instruction": "Open src/app/App.jsx to start developing your React app.",
-  "title": "React App Starter"
+  "upload": {
+    "success": "File(s) have been uploaded successfully.",
+    "error": "Failed to upload file(s).",
+    "text": "Drag 'n' drop some files here, or click to select files.",
+    "hint": "Support for a single or bulk upload.",
+    "title": "Upload"
+  },
+  "delete": {
+    "success": "File has been deleted successfully.",
+    "successMultiple": "Files have been deleted successfully.",
+    "error": "Failed to delete file.",
+    "errorMultiple": "Failed to delete files."
+  },
+  "missingAlbum": "Please select an album for the file(s).",
+  "photos": "Photos"
 }

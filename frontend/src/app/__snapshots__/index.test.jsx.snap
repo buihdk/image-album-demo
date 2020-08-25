@@ -1,0 +1,192 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders without crashing 1`] = `
+<Spin
+  size="default"
+  spinning={false}
+  style={
+    Object {
+      "minHeight": "100vh",
+    }
+  }
+  tip="Loading..."
+  wrapperClassName=""
+>
+  <div
+    className="container"
+  >
+    <div
+      className="header"
+    >
+      <span
+        className="title"
+      >
+        [missing "en.photos" translation]
+      </span>
+      <div>
+        <Select
+          bordered={true}
+          choiceTransitionName=""
+          onChange={[Function]}
+          transitionName="slide-up"
+          value="en"
+        >
+          <Option
+            value="en"
+          >
+            EN 🇬🇧
+          </Option>
+          <Option
+            value="vi"
+          >
+            VI 🇻🇳
+          </Option>
+          <Option
+            value="zh"
+          >
+            ZH 🇨🇳
+          </Option>
+        </Select>
+        <Divider
+          type="vertical"
+        />
+        <Button
+          block={false}
+          ghost={false}
+          htmlType="button"
+          loading={false}
+          onClick={[Function]}
+          type="primary"
+        >
+          <ForwardRef(CloudUploadOutlined) />
+           
+          [missing "en.upload.title" translation]
+        </Button>
+        <Divider
+          type="vertical"
+        />
+        <Select
+          bordered={true}
+          choiceTransitionName=""
+          onChange={[Function]}
+          transitionName="slide-up"
+          value={25}
+        >
+          <Option
+            value="5"
+          >
+            5
+          </Option>
+          <Option
+            value="10"
+          >
+            10
+          </Option>
+          <Option
+            value="25"
+          >
+            25
+          </Option>
+          <Option
+            value="50"
+          >
+            50
+          </Option>
+          <Option
+            value="100"
+          >
+            100
+          </Option>
+          <Option
+            value="250"
+          >
+            250
+          </Option>
+          <Option
+            value="500"
+          >
+            500
+          </Option>
+        </Select>
+      </div>
+    </div>
+    <div
+      className="list-photos"
+    >
+      <List
+        dataSource={Array []}
+        grid={
+          Object {
+            "column": 5,
+            "gutter": 16,
+          }
+        }
+        renderItem={[Function]}
+      />
+    </div>
+    <Modal
+      confirmLoading={false}
+      footer={null}
+      maskTransitionName="fade"
+      okType="primary"
+      onCancel={[Function]}
+      title="Upload Photo(s)"
+      transitionName="zoom"
+      visible={false}
+      width={520}
+    >
+      <UploadImage
+        handleFetchPhotos={[Function]}
+      />
+    </Modal>
+    <Modal
+      bodyStyle={
+        Object {
+          "padding": 0,
+          "textAlign": "center",
+        }
+      }
+      centered={true}
+      closable={false}
+      confirmLoading={false}
+      footer={null}
+      maskStyle={
+        Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.9)",
+        }
+      }
+      maskTransitionName="fade"
+      okType="primary"
+      onCancel={[Function]}
+      transitionName="zoom"
+      visible={false}
+      width="auto"
+    >
+      <img
+        alt="preview"
+        className="preview-photo"
+        src=""
+      />
+    </Modal>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Button
+      block={false}
+      ghost={false}
+      htmlType="button"
+      loading={false}
+      onClick={[Function]}
+      type="primary"
+    >
+      Load More
+    </Button>
+  </div>
+</Spin>
+`;

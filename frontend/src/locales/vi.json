@@ -1,4 +1,17 @@
 {
-  "instruction": "Mở src/app/App.jsx để bắt đầu phát triển ứng dụng React của bạn.",
-  "title": "Ứng Dụng React Khởi Đầu"
+  "upload": {
+    "success": "(Các) tệp đã được tải lên thành công.",
+    "error": "Không tải lên được (các) tệp.",
+    "text": "Kéo và thả một số tệp tại đây hoặc nhấp để chọn tệp.",
+    "hint": "Hỗ trợ tải lên hàng loạt hoặc đơn lẻ.",
+    "title": "Tải lên"
+  },
+  "delete": {
+    "success": "Tệp đã được xóa thành công.",
+    "successMultiple": "Các tệp đã được xóa thành công.",
+    "error": "Không xóa được tệp.",
+    "errorMultiple": "Không xóa được các tệp."
+  },
+  "missingAlbum": "Vui lòng chọn một album cho (các) tệp.",
+  "photos": "Ảnh"
 }

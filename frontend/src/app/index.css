@@ -1,0 +1,38 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 8px 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 8px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.ant-card-cover {
+  text-align: -webkit-center;
+  text-align: center;
+}
+
+.ant-card-cover > img {
+  height: 250px;
+  object-fit: cover;
+}
+
+.preview-photo {
+  max-width: 70vw;
+  max-height: 90vh;
+}
