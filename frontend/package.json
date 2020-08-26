@@ -15,7 +15,7 @@
     "lint:prettier": "prettier --config .prettierrc --write ./src/**/**/**/*.{js,jsx,json,css}",
     "serve": "serve -s -p ${WEB_APP_PORT:=8000} dist",
     "start": "webpack-dev-server --config webpack.dev.js",
-    "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand"
+    "test": "./node_modules/.bin/jest --config=./jest.config.js --coverage --runInBand --env=./setupJestEnv.js"
   },
   "dependencies": {
     "@ant-design/icons": "^4.2.2",

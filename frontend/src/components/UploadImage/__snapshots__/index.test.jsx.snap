@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UploadImage renders without crashing 1`] = `
+<div>
+  <Dragger
+    accept="image/*"
+    beforeUpload={[Function]}
+    className="upload"
+    fileList={Array []}
+    multiple={true}
+    onRemove={[Function]}
+  >
+    <p
+      className="ant-upload-drag-icon"
+    >
+      <ForwardRef(InboxOutlined) />
+    </p>
+    <p
+      className="ant-upload-text"
+    >
+      [missing "en.upload.text" translation]
+    </p>
+    <p
+      className="ant-upload-hint"
+    >
+      [missing "en.upload.hint" translation]
+    </p>
+  </Dragger>
+  <div
+    className="button-group"
+  >
+    <Select
+      bordered={true}
+      choiceTransitionName=""
+      onChange={[Function]}
+      placeholder="Select album"
+      transitionName="slide-up"
+      value={null}
+    >
+      <Option
+        value="travel"
+      >
+        Travel
+      </Option>
+      <Option
+        value="personal"
+      >
+        Personal
+      </Option>
+      <Option
+        value="food"
+      >
+        Food
+      </Option>
+      <Option
+        value="nature"
+      >
+        Nature
+      </Option>
+      <Option
+        value="other"
+      >
+        Other
+      </Option>
+    </Select>
+    <Button
+      block={false}
+      disabled={true}
+      ghost={false}
+      htmlType="button"
+      icon={<ForwardRef(CloudUploadOutlined) />}
+      loading={false}
+      onClick={[Function]}
+      type="primary"
+    >
+      Start Upload
+    </Button>
+  </div>
+</div>
+`;

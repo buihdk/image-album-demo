@@ -1,18 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import Index from '.'
 
-import App from './app';
+jest.mock('./app', () => () => <div />)
 
-ReactDOM.render = jest.fn();
-
-describe('root', () => {
-  it('renders without crashing', () => {
-    const div = document.createElement('div');
-    div.setAttribute('id', 'root');
-    document.body.appendChild(div);
-
-    import('./index.jsx').then(() =>
-      expect(ReactDOM.render).toHaveBeenCalledWith(<App />, div),
-    );
-  });
-});
+it('renders without crashing', () => {
+  const wrapper = JSON.stringify(Object.assign({}, Index, { _reactInternalInstance: 'censored' }))
+  expect(wrapper).toMatchSnapshot()
+})

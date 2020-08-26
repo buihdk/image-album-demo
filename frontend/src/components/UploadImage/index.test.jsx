@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '.';
+import UploadImage from '.';
 
-describe('App', () => {
-  const wrapper = shallow(<App />);
+describe('UploadImage', () => {
+  const wrapper = shallow(<UploadImage />);
 
   test('renders without crashing', () => {
     expect(wrapper).toMatchSnapshot();
