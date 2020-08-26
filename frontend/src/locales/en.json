@@ -8,9 +8,9 @@
   },
   "delete": {
     "success": "File has been deleted successfully.",
-    "successMultiple": "Files have been deleted successfully.",
+    "successMultiple": "File(s) have been deleted successfully.",
     "error": "Failed to delete file.",
-    "errorMultiple": "Failed to delete files."
+    "errorMultiple": "Failed to delete file(s)."
   },
   "missingAlbum": "Please select an album for the file(s).",
   "photos": "Photos",

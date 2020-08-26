@@ -34,8 +34,6 @@ const App = () => {
   const [selectedLocale, setSelectedLocale] = useState(I18n.locale);
   const [imageURL, setImageURL] = useState('');
   const [selectedPhotos, setSelectedPhotos] = useState({ count: 0 });
-  console.log('listPhotos', listPhotos);
-  console.log('params', { skip: selectedSkip, limit: selectedLimit });
 
   const handleFetchPhotos = () => {
     setIsLoading(true);
@@ -152,7 +150,7 @@ const App = () => {
             {selectedPhotos.count > 0 && (
               <>
                 <Button type="primary" danger onClick={handleDeletePhotos}>
-                  <DeleteOutlined /> Delete {selectedPhotos.count} photos
+                  <DeleteOutlined /> Delete {selectedPhotos.count} photo(s)
                 </Button>
                 <Divider type="vertical" />
               </>
@@ -176,32 +174,38 @@ const App = () => {
           <List
             grid={{ gutter: 16, column: 5 }}
             dataSource={listPhotos}
-            renderItem={photo => (
-              <Item key={photo.id}>
-                <Card
-                  key={photo.id}
-                  hoverable
-                  cover={<img alt={photo.album} src={photo.raw} />}
-                  actions={[
-                    <Tooltip key="select" title="select">
-                      <Checkbox
-                        defaultChecked={false}
-                        id={`${photo.album}:${photo.name}`}
-                        onChange={handleSelectPhoto}
-                      />
-                    </Tooltip>,
-                    <Tooltip key="preview" title="preview">
-                      <EyeOutlined src={photo.raw} onClick={handlePreviewPhoto} />
-                    </Tooltip>,
-                    <Tooltip key="delete" title="delete">
-                      <DeleteOutlined path={`${photo.album.toLowerCase()}/${photo.name}`} onClick={handleDeletePhoto} />
-                    </Tooltip>,
-                  ]}
-                >
-                  <Meta title={photo.name} description={photo.album} />
-                </Card>
-              </Item>
-            )}
+            renderItem={photo => {
+              const checkedStatus = selectedPhotos[`${photo.album}:${photo.name}`];
+              return (
+                <Item key={photo.id}>
+                  <Card
+                    key={photo.id}
+                    hoverable
+                    cover={<img alt={photo.album} src={photo.raw} />}
+                    actions={[
+                      <Tooltip key="select" title="select">
+                        <Checkbox
+                          checked={checkedStatus}
+                          id={`${photo.album}:${photo.name}`}
+                          onChange={handleSelectPhoto}
+                        />
+                      </Tooltip>,
+                      <Tooltip key="preview" title="preview">
+                        <EyeOutlined src={photo.raw} onClick={handlePreviewPhoto} />
+                      </Tooltip>,
+                      <Tooltip key="delete" title="delete">
+                        <DeleteOutlined
+                          path={`${photo.album.toLowerCase()}/${photo.name}`}
+                          onClick={handleDeletePhoto}
+                        />
+                      </Tooltip>,
+                    ]}
+                  >
+                    <Meta title={photo.name} description={photo.album} />
+                  </Card>
+                </Item>
+              );
+            }}
           />
         </div>
         <Modal
