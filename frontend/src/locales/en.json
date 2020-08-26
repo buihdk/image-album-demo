@@ -13,5 +13,7 @@
     "errorMultiple": "Failed to delete files."
   },
   "missingAlbum": "Please select an album for the file(s).",
-  "photos": "Photos"
+  "photos": "Photos",
+  "fetchInitialPhotos": "Fetched initial %{total} photos.",
+  "loadMorePhotos": "Loaded %{total} more photos."
 }

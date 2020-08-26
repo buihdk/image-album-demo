@@ -34,41 +34,40 @@ const App = () => {
   const [selectedLocale, setSelectedLocale] = useState(I18n.locale);
   const [imageURL, setImageURL] = useState('');
   const [selectedPhotos, setSelectedPhotos] = useState({ count: 0 });
+  console.log('listPhotos', listPhotos);
+  console.log('params', { skip: selectedSkip, limit: selectedLimit });
 
   const handleFetchPhotos = () => {
     setIsLoading(true);
-    sv.getListPhotos({ skip: selectedSkip, limit: selectedLimit })
+    const params = { skip: 0, limit: selectedLimit };
+    sv.getListPhotos(params)
       .then(res => setListPhotos(res.data.documents))
       .catch(res => console.error(res));
-    setTimeout(() => setIsLoading(false), 500);
+    setTimeout(() => {
+      setIsLoading(false);
+      message.info(I18n.t('fetchInitialPhotos', { total: selectedLimit }));
+    }, 500);
   };
+
   const handleChangeLimit = limit => {
     setSelectedLimit(Number(limit));
     selectedSkip(0);
   };
+
   const handleChangeLocale = locale => {
     setSelectedLocale(locale);
     I18n.translations[locale] = require(`src/locales/${locale}.json`);
     I18n.locale = locale;
   };
   const showUploadModal = () => setUploadVisibility(true);
+
   const handlePreviewPhoto = event => {
     setImageURL(event.currentTarget.getAttribute('src'));
     setPreviewVisibility(true);
   };
-  const handleDeletePhoto = event => {
-    sv.deletePhoto(event)
-      .then(() => {
-        message.success(I18n.t('delete.success'));
-        setSelectedPhotos({});
-        handleFetchPhotos();
-      })
-      .catch(res => {
-        message.error(I18n.t('delete.error'));
-        console.error(res);
-      });
-  };
+
   const handleCancelModal = callback => () => callback(false);
+
   const handleSelectPhoto = event => {
     const photoID = event.nativeEvent.path[0].getAttribute('id');
     const newSelectedPhotos = { ...selectedPhotos };
@@ -81,6 +80,20 @@ const App = () => {
     }
     setSelectedPhotos(newSelectedPhotos);
   };
+
+  const handleDeletePhoto = event => {
+    sv.deletePhoto(event)
+      .then(() => {
+        message.success(I18n.t('delete.success'));
+        setSelectedPhotos({ count: 0 });
+        handleFetchPhotos();
+      })
+      .catch(res => {
+        message.error(I18n.t('delete.error'));
+        console.error(res);
+      });
+  };
+
   const handleDeletePhotos = () => {
     const deleteData = [];
     Object.entries(selectedPhotos).forEach(([key, value]) => {
@@ -105,14 +118,19 @@ const App = () => {
         console.error(res);
       });
   };
+
   const handleLoadMore = () => {
     const newSkip = selectedSkip + selectedLimit;
     setSelectedSkip(newSkip);
     setIsLoading(true);
-    sv.getListPhotos({ skip: newSkip, limit: selectedLimit })
+    const params = { skip: newSkip, limit: selectedLimit };
+    sv.getListPhotos(params)
       .then(res => setListPhotos(prevList => [...prevList, ...res.data.documents]))
       .catch(res => console.error(res));
-    setTimeout(() => setIsLoading(false), 500);
+    setTimeout(() => {
+      setIsLoading(false);
+      message.info(I18n.t('loadMorePhotos', { total: selectedLimit }));
+    }, 500);
   };
 
   useEffect(() => {
@@ -161,11 +179,16 @@ const App = () => {
             renderItem={photo => (
               <Item key={photo.id}>
                 <Card
+                  key={photo.id}
                   hoverable
                   cover={<img alt={photo.album} src={photo.raw} />}
                   actions={[
                     <Tooltip key="select" title="select">
-                      <Checkbox id={`${photo.album}:${photo.name}`} onChange={handleSelectPhoto} />
+                      <Checkbox
+                        defaultChecked={false}
+                        id={`${photo.album}:${photo.name}`}
+                        onChange={handleSelectPhoto}
+                      />
                     </Tooltip>,
                     <Tooltip key="preview" title="preview">
                       <EyeOutlined src={photo.raw} onClick={handlePreviewPhoto} />

@@ -13,5 +13,7 @@
     "errorMultiple": "Không xóa được các tệp."
   },
   "missingAlbum": "Vui lòng chọn một album cho (các) tệp.",
-  "photos": "Ảnh"
+  "photos": "Ảnh",
+  "fetchInitialPhotos": "Đã tìm nạp %{total} ảnh ban đầu.",
+  "loadMorePhotos": "Đã tải thêm% {total} ảnh."
 }

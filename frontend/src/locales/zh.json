@@ -13,5 +13,7 @@
     "errorMultiple": "删除文件失败。"
   },
   "missingAlbum": "请为该文件选择一个相册。",
-  "photos": "相片"
+  "photos": "相片",
+  "fetchInitialPhotos": "已提取最初的％{total}张照片。",
+  "loadMorePhotos": "已加载％{total}张照片。"
 }
